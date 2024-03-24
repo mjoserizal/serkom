@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
-    public function home(Request $request)
+    public function home(Request $request) //MENAMPILKAN MAHASISWA BERDASARKAN NIM DENGAN DESCENDING,STATISTIK BERDASARKAN GENDER,TOTAL MAHASISWA
     {
         $mahasiswas = Mahasiswa::orderBy('nim', 'desc');
 

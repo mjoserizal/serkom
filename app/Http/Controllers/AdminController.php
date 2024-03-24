@@ -3,32 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function deleteAdmin($id)
-    {
-        $admin = Admin::find($id);
-        $admin->delete();
-        return redirect()->route('admin.index')->with('success', 'Admin berhasil dihapus.');
-    }
-    public function index()
+    public function index() //INDEX ATAU HOME
     {
         $mahasiswas = Mahasiswa::all();
         return view('admin.index', compact('mahasiswas'));
     }
 
 
-    public function showByNim($nim)
+    public function showByNim($nim) //MENAMPILKAN BEDASARKAN NIME
     {
         $mahasiswa = Mahasiswa::where('nim', $nim)->firstOrFail();
         return view('admin.show', compact('mahasiswa'));
     }
 
-    public function delete($nim)
+    public function delete($nim) //MENGHAPUS BEDASARKAN NIM
     {
         $mahasiswa = Mahasiswa::where('nim', $nim)->firstOrFail();
         $mahasiswa->delete();
@@ -36,13 +29,13 @@ class AdminController extends Controller
         return redirect()->route('admin.index')->with('success', 'Mahasiswa berhasil dihapus.');
     }
 
-    public function edit($nim)
+    public function edit($nim) //TAMPILAN UNTUK EDIT BEDASARKAN NIM
     {
         $mahasiswa = Mahasiswa::where('nim', $nim)->firstOrFail();
         return view('admin.edit', compact('mahasiswa'));
     }
 
-    public function update(Request $request, $nim)
+    public function update(Request $request, $nim) //FUNCTION POST UNTUK UPDATE BEDASARKAN NIM
     {
         // Validate the request data
         $request->validate([
@@ -69,7 +62,7 @@ class AdminController extends Controller
         // Redirect back to the index page with a success message
         return redirect()->route('admin.index')->with('success', 'Mahasiswa berhasil diperbarui.');
     }
-    public function store(Request $request)
+    public function store(Request $request) //FUNCTION POST UNTUK MENAMBAHKAN DATA
     {
         // Validate the request data
         $request->validate([
@@ -94,7 +87,7 @@ class AdminController extends Controller
         // Redirect back to the index page with a success message
         return redirect()->route('admin.index')->with('success', 'Mahasiswa berhasil ditambahkan.');
     }
-    public function create()
+    public function create() //TAMPILAN UNTUK MENAMBAHKAN DATA
     {
         return view('admin.create');
     }
