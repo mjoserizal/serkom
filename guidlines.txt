@@ -1,0 +1,6 @@
+1. Untuk navigasi dalam sistem, Anda dapat menggunakan opsi yang disediakan di menu. Menu terdiri dari beberapa opsi, yaitu: Home, Mahasiswa (DESC berdasarkan NIM), Search mahasiswa berdasarkan nama, Admin, Data Mahasiswa, dan CRUD Data Mahasiswa.
+2. Untuk melihat daftar mahasiswa yang disortir berdasarkan NIM, Anda dapat memilih opsi "Mahasiswa (DESC berdasarkan NIM)" di menu.
+3. Untuk mencari data mahasiswa berdasarkan nama, Anda dapat memilih opsi "Search mahasiswa berdasarkan nama" di menu.
+4 .Opsi "Admin" menyediakan fungsi-fungsi administrasi terkait dengan sistem.
+5. Untuk melihat atau mengelola data mahasiswa, Anda dapat memilih opsi "Data Mahasiswa". Di sini, Anda dapat melihat, menambah, mengedit, atau menghapus data mahasiswa.
+6. Untuk menambah data mahasiswa baru, Anda dapat memilih opsi "CRUD Data Mahasiswa". Opsi ini memungkinkan Anda untuk create, read, update, dan delete data mahasiswa.
